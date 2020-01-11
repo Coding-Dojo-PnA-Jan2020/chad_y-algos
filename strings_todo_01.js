@@ -6,7 +6,7 @@ function stripSpace(myString) {
     return myString;
 }
 
-console.log(stripSpace(" Pl ayTha tF u nkyM usi c "))
+console.log(stripSpace(" Pl ayTha tF u nkyM usi c "));
 
 
 

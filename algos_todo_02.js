@@ -1,6 +1,16 @@
 // Reverse
-// Given a numerical array, reverse the order of values, in-place. The reversed array should have the same length, with existing elements moved to other indices so that order of elements is reversed. Working ‘in-place’ means that you cannot use a second array – move values within the array that you are given. As always, do not use built-in array functions such as splice().
+// Given a numerical array, reverse the order of values, in-place. The reversed array should have the same length, with existing elements moved to other indices so that order of elements is reversed. Working ‘in-place’ means that you cannot use a second array – move values within the array that you are given. As always, do not use built-in array functions such as splice(). ex: [1,2,3,4] should become [4,3,2,1]
+function reversArray(arr) {
+    var b = "";
+    for (var i = 0; i < arr.length / 2; i++){
+        b = arr[i];
+        arr[i] = arr[arr.length - i - 1];
+        arr[arr.length - i - 1] = b;
+    }
+    return arr;
+}
 
+console.log(reversArray([10,20,30,40,50,60]));
 
 
 // Rotate
