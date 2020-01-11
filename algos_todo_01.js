@@ -63,7 +63,8 @@ function swapPos(arr) {
     while (i < arr.length) {
         if (arr.length % 2 == 1 && i == arr.length - 1) {
             break;
-        } else {
+        }
+        else {
             var b = arr[i];
             arr[i] = arr[i + 1];
             arr[i + 1] = b;
@@ -88,7 +89,8 @@ function noDups(arr) {
         newArr[newArr.length] = arr[i];
         if (arr[i + 1] == arr[i]) {
             i = i + 2;
-        } else {
+        }
+        else {
             i++;
         }
     }
