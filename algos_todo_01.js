@@ -15,7 +15,7 @@ function pushFront(arr, val){
 Given an array, remove and return the value at the beginning of the array. Do this without using any built-in array methods except pop().
 */
 function popFront(arr){
-    b = arr[0];
+    var b = arr[0];
     for (var i = 1; i < arr.length; i++) {
         arr[i - 1] = arr[i];
     }
@@ -52,7 +52,7 @@ function removeAt(arr, val) {
     return b;
 }
 
-// console.log(removeAt([10,20,30,40,50,60], 3));
+console.log(removeAt([10,20,30,40,50,60], 3));
 
 
 /*
