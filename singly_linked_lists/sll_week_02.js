@@ -31,12 +31,37 @@ class SinglyLinkedList {
         this.head = this.head.next;
         return removeThis;
     }
+    removeBack () {
+        if (!this.head) {
+            return null;
+        }
+        if (!this.head.next) {
+            this.head = null;
+            return;
+        }
+        var previous = this.head;
+        var tail = this.head.next;
+
+        while (tail.next !== null) {
+            previous = tail;
+            tail = tail.next;
+        }
+        previous.next = null;
+        return this.printVal();
+    }
     printVal() {
         var current = this.head;
         while (current != null) {
             console.log(current.value);
             current = current.next;
         }
+    }
+    printBack() {
+        var current = this.head;
+        while (current.next != null) {
+            current = current.next;
+        }
+        console.log(current);
     }
     addBack(val) {
         var newNode = new Node(val);
@@ -53,7 +78,10 @@ class SinglyLinkedList {
         current.next = newNode;
     }
     length(){
-        var count = 0;
+        var count = 1;
+        if (!this.head) {
+            return 0;
+        }
         var runner = this.head;
         while (runner.next !== null) {
             count++;
@@ -78,6 +106,9 @@ console.log(list);
 console.log(list.head);
 list.printVal();
 console.log(list.length());
+list.removeBack();
+console.log(list.length());
+list.printBack();
 
 
 
