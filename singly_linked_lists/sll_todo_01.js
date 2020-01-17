@@ -4,7 +4,7 @@
 
 class Node {
     constructor(val) {
-        this.val = val;
+        this.value = val;
         this.next = null;
     }
 }
@@ -18,18 +18,23 @@ class SinglyLinkedList {
     }
     addFront(val) {
         var newNode = new Node(val);
+        if (this.head === null) {
+            this.head = newNode;
+            return this;
+        }
         newNode.next = this.head;
         this.head = newNode;
+        return this;
     }
     removeFirst () {
-        var removeThis = this.head.val;
+        var removeThis = this.head.value;
         this.head = this.head.next;
         return removeThis;
     }
     printVal() {
         var current = this.head;
         while (current != null) {
-            console.log(current.val);
+            console.log(current.value);
             current = current.next;
         }
     }
@@ -42,20 +47,37 @@ class SinglyLinkedList {
             return;
         }
         while (current.next !== null) {
-            console.log(current.val);
+            console.log(current.value);
             current = current.next;
         }
         current.next = newNode;
+    }
+    length(){
+        var count = 0;
+        var runner = this.head;
+        while (runner.next !== null) {
+            count++;
+            runner = runner.next;
+        }
+        return count;
     }
 }
 
 var list = new SinglyLinkedList();
 list.addFront("HELLO");
 list.addBack("GOODBYE");
+list.addBack("AGAIN");
 list.addFront("rudy");
+list.printVal();
+console.log("Removing Head from Node")
+console.log(list.removeFirst());
+console.log("List after removing head from node")
+console.log(list);
 list.addBack("jimmy");
 console.log(list);
 console.log(list.head);
+list.printVal();
+console.log(list.length());
 
 
 
