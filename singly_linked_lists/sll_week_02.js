@@ -89,6 +89,25 @@ class SinglyLinkedList {
         }
         return count;
     }
+    contains(val) {
+        var count = 0;
+        console.log(this.head);
+        if (!this.head) {
+            return console.log("empty node list");
+        }
+        if (this.head === val) {
+            return console.log("the head node contains: " + val);
+        }
+        var runner = this.head;
+        while (runner.next !== null) {
+            if (runner.value === val) {
+                count++;
+                return console.log("the " + count + " node contains: " + val);
+            }
+            count++;
+            runner = runner.next;
+        }
+    }
 }
 
 var list = new SinglyLinkedList();
@@ -109,6 +128,7 @@ console.log(list.length());
 list.removeBack();
 console.log(list.length());
 list.printBack();
+list.contains("HELLO")
 
 
 
