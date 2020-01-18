@@ -99,7 +99,7 @@ class SinglyLinkedList {
             return console.log("the head node contains: " + val);
         }
         var runner = this.head;
-        while (runner.next !== null) {
+        while (runner !== null) {
             if (runner.value === val) {
                 count++;
                 return console.log("the " + count + " node contains: " + val);
@@ -115,12 +115,14 @@ list.addFront("HELLO");
 list.addBack("GOODBYE");
 list.addBack("AGAIN");
 list.addFront("rudy");
+list.contains("rudy");
 list.printVal();
 console.log("Removing Head from Node")
 console.log(list.removeFirst());
 console.log("List after removing head from node")
 console.log(list);
 list.addBack("jimmy");
+list.contains("jimmy");
 console.log(list);
 console.log(list.head);
 list.printVal();
@@ -128,7 +130,7 @@ console.log(list.length());
 list.removeBack();
 console.log(list.length());
 list.printBack();
-list.contains("HELLO")
+list.contains("HELLO");
 
 
 
