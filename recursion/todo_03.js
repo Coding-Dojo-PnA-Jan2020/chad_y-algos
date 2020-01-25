@@ -3,6 +3,26 @@
 // Given a sorted array and a value, recursively determine whether value is found within array. 
 // rBinarySearch([1,3,5,6],4) = false; 
 // rBinarySearch([4,5,6,8,12],5) = true.
+function rBinarySearch(arr, val, startIdx = 0, endIdx = arr.length-1) {
+    if (val < arr[startIdx] || val > arr[endIdx]) {
+        return false;
+    }
+    var midIdx = Math.floor((startIdx+endIdx)/2);
+    if (arr[midIdx] == val) {
+        return true;
+    }
+    else if (arr[midIdx] > val) {
+        return rBinarySearch(arr, val, startIdx, endIdx = midIdx-1);
+    }
+    else {
+        return rBinarySearch(arr, val, startIdx = midIdx+1, endIdx);
+    }
+
+}
+
+console.log(rBinarySearch([1,3,5,6],4));
+console.log(rBinarySearch([4,5,6,8,12],5));
+console.log(rBinarySearch([-5,2,4,9,12],5));
 
 
 
